@@ -22,19 +22,10 @@ person = {
 }
 
 
-def print_dict(d, indent=0):
-    for index, (key, value) in enumerate(d.items()):
-        if index == 0:
-            d[key] = "None"
-        # if index == 1:
-        #     d.pop(key)
-        print("  " * indent + str(key) + ": ", end="")
-        if isinstance(value, dict):
-            print()
-            print_dict(value, indent + 1)
-        else:
-            print(value)
-
-
-print_dict(person)
+person["name"] = "Mike"
+person["address"]["zip"] = "10002"
+person["address"]["province"] = "DC Washington"
+del person["city"]
+del person["contact"]["email"]
 print(person)
+
