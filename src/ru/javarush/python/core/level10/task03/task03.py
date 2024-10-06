@@ -4,8 +4,9 @@
 
 # Напишите тут ваш код
 def func():
- print("dfdf")
-   print("aga")
+    print("dfdf")
+    # print("aga")
+
 
 if True:
-  func()
+    func()
