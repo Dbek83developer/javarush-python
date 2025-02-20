@@ -1,6 +1,7 @@
 if (true) {
-    //TODO:
+    let blockScopedVar = "I am block scoped";
+    console.log(blockScopedVar); // Вывод значения переменной внутри блока
 }
 
 // Попытка вывода значения переменной за пределами блока
-//TODO:
+//console.log(blockScopedVar);
