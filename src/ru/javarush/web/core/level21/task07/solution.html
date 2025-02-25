@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Переключение классов</title>
+    <style>
+        .highlight {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+<p id="myParagraph">Click me to toggle highlight class!</p>
+<script>
+    const paragraph = document.getElementById('myParagraph');
+
+    paragraph.addEventListener('click', function () {
+        console.log('Before toggle:', paragraph.classList.contains('highlight'));
+        paragraph.classList.toggle('highlight');
+        console.log('After toggle:', paragraph.classList.contains('highlight'));
+    });
+</script>
+</body>
+</html>

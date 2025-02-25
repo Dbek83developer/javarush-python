@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Новый элемент списка</title>
+</head>
+<body>
+    <ul id="myList">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var ul = document.getElementById('myList');
+            ul.innerHTML += '<li>New Item</li>';
+        });
+    </script>
+</body>
+</html>

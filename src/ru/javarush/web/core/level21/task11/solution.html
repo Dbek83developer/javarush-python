@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Mouse Coordinates</title>
+    <style>
+        #mouseArea {
+            width: 300px;
+            height: 300px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div id="mouseArea"></div>
+    <script>
+        // Получаем элемент div с идентификатором mouseArea
+        const mouseArea = document.getElementById('mouseArea');
+
+        // Добавляем обработчик события mousemove к элементу mouseArea
+        mouseArea.addEventListener('mousemove', (event) => {
+            // Выводим в консоль текущие координаты курсора clientX и clientY
+            console.log(`clientX: ${event.clientX}, clientY: ${event.clientY}`);
+        });
+    </script>
+</body>
+</html>

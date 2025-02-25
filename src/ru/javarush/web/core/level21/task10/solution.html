@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Удаление обработчика</title>
+</head>
+<body>
+    <button id="button1">Первая кнопка</button>
+    <button id="button2">Вторая кнопка</button>
+    <script>
+        const button1 = document.getElementById('button1');
+        const button2 = document.getElementById('button2');
+
+        function handleClick() {
+            alert('Кнопка была нажата');
+        }
+
+        button1.addEventListener('click', handleClick);
+
+        button2.addEventListener('click', () => {
+            button1.removeEventListener('click', handleClick);
+        });
+    </script>
+</body>
+</html>

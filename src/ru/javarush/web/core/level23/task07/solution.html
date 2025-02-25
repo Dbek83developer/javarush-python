@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Сохранение настроек</title>
+    <style>
+        body.light {
+            background-color: white;
+            color: black;
+        }
+        body.dark {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <form id="settingsForm">
+        <label for="username">Имя пользователя:</label>
+        <input type="text" id="username" name="username">
+        <div>
+            <label for="theme">Тема:</label>
+            <select id="theme" name="theme">
+                <option value="light">Светлая</option>
+                <option value="dark">Темная</option>
+            </select>
+        </div>
+        <button type="button" id="saveButton">Сохранить</button>
+    </form>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const usernameInput = document.getElementById('username');
+            const themeSelect = document.getElementById('theme');
+            const saveButton = document.getElementById('saveButton');
+
+            // Load settings from localStorage
+            const savedUsername = localStorage.getItem('username');
+            const savedTheme = localStorage.getItem('theme');
+
+            if (savedUsername) {
+                usernameInput.value = savedUsername;
+            }
+
+            if (savedTheme) {
+                themeSelect.value = savedTheme;
+                document.body.className = savedTheme;
+            }
+
+            // Save settings to localStorage
+            saveButton.addEventListener('click', () => {
+                const username = usernameInput.value;
+                const theme = themeSelect.value;
+
+                localStorage.setItem('username', username);
+                localStorage.setItem('theme', theme);
+                document.body.className = theme;
+            });
+        });
+    </script>
+</body>
+</html>

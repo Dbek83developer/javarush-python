@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Изменение стиля абзаца</title>
+</head>
+<body>
+    <p id="myParagraph">Это абзац, который будет изменен скриптом.</p>
+ <script>
+        // Нахождение элемента <p> по его id
+        const paragraph = document.getElementById('myParagraph');
+
+        // Вывод текущих стилей элемента до изменений
+        console.log('Стили до изменений:', window.getComputedStyle(paragraph).cssText);
+
+        // Изменение цвета фона
+        paragraph.style.backgroundColor = 'yellow';
+
+        // Изменение цвета текста
+        paragraph.style.color = 'blue';
+
+        // Изменение размера шрифта
+        paragraph.style.fontSize = '20px';
+
+        // Вывод текущих стилей элемента после изменений
+        console.log('Стили после изменений:', window.getComputedStyle(paragraph).cssText);
+    </script>
+</body>
+</html>

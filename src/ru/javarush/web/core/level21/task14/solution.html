@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Остановка всплытия</title>
+    <style>
+        #container {
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #button {
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <button id="button">Нажми меня</button>
+    </div>
+    <script>
+        document.getElementById('container').addEventListener('click', function() {
+            console.log('Клик внутри div');
+        });
+
+        document.getElementById('button').addEventListener('click', function(event) {
+            console.log('Кнопка нажата');
+            event.stopPropagation();
+        });
+    </script>
+</body>
+</html>

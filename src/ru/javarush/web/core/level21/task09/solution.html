@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Button Event Handlers</title>
+</head>
+<body>
+    <button id="myButton">Click Me</button>
+    <script>
+        const button = document.getElementById('myButton');
+
+        button.addEventListener('click', () => {
+            console.log('Первый обработчик');
+        });
+
+        button.addEventListener('click', () => {
+            console.log('Второй обработчик');
+        });
+    </script>
+</body>
+</html>

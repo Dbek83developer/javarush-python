@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Save Notification</title>
+    <style>
+        #saveButton {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <button id="saveButton">Save</button>
+    <script>
+        const saveButton = document.getElementById('saveButton');
+
+        const dataSavedEvent = new CustomEvent('dataSaved', {
+            detail: {
+                message: 'Data has been saved successfully'
+            }
+        });
+
+        saveButton.addEventListener('dataSaved', (event) => {
+            console.log(event.detail.message);
+        });
+
+        saveButton.addEventListener('click', () => {
+            saveButton.dispatchEvent(dataSavedEvent);
+        });
+    </script>
+</body>
+</html>

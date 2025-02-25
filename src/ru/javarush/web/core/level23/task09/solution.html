@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Username Cookie</title>
+</head>
+<body>
+<script>
+    // Функция для установки куки
+    function setCookie(name, value, days) {
+        const date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        const expires = "expires=" + date.toUTCString();
+        document.cookie = name + "=" + value + ";" + expires + ";path=/";
+    }
+
+    // Функция для получения куки
+    function getCookie(name) {
+        const nameEQ = name + "=";
+        const ca = document.cookie.split(';');
+        for(let i = 0; i < ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+            if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+        }
+        return null;
+    }
+
+    // Запрос имени пользователя и сохранение его в куки
+    const username = prompt("Введите ваше имя:");
+    setCookie("username", username, 7);
+
+    // Функция для считывания значения куки и вывода его в alert
+    function showUsername() {
+        const username = getCookie("username");
+        if (username) {
+            alert("Ваше имя: " + username);
+        } else {
+            alert("Куки с именем пользователя не найдены.");
+        }
+    }
+
+    // Вызов функции для отображения имени пользователя из куки
+    showUsername();
+</script>
+</body>
+</html>

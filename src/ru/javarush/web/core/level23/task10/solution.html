@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Удаление куки</title>
+    <style>
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+<button id="deleteCookieButton">Удалить куки</button>
+<script>
+    // Установка куки с именем "sessionId", произвольным значением и сроком действия 7 дней
+    function setCookie(name, value, days) {
+        const date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        const expires = "expires=" + date.toUTCString();
+        document.cookie = name + "=" + value + ";" + expires + ";path=/";
+    }
+
+    setCookie("sessionId", "123456789", 7);
+
+    // Функция для удаления куки путем установки истекшего срока действия
+    function deleteCookie(name) {
+        document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    }
+
+    // Привязка обработчика события к кнопке для удаления куки при нажатии
+    document.getElementById("deleteCookieButton").addEventListener("click", function() {
+        deleteCookie("sessionId");
+        alert("Куки 'sessionId' удалена");
+    });
+</script>
+</body>
+</html>

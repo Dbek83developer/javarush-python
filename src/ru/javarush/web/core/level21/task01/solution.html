@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Первый абзац</title>
+</head>
+<body>
+    <p>Это первый абзац.</p>
+    <p>Это второй абзац.</p>
+    <p>Это третий абзац.</p>
+
+    <script>
+        // Нахождение первого абзаца с помощью метода document.querySelector
+        const firstParagraph = document.querySelector('p');
+
+        // Вывод в консоль имени узла (nodeName)
+        console.log('Имя узла:', firstParagraph.nodeName);
+
+        // Вывод в консоль типа узла (nodeType)
+        console.log('Тип узла:', firstParagraph.nodeType);
+
+        // Вывод в консоль текстового содержимого (textContent)
+        console.log('Текстовое содержимое:', firstParagraph.textContent);
+    </script>
+</body>
+</html>

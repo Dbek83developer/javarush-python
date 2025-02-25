@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Text Example</title>
+</head>
+<body>
+    <div id="textContainer">Original text</div>
+    <button id="updateButton">Update</button>
+
+<script>
+    // Создаём кастомное событие
+    const updateTextEvent = new CustomEvent('updateText', {
+        detail: 'Updated text'
+    });
+
+    // Добавляем обработчик события на div
+    document.getElementById('textContainer').addEventListener('updateText', function(event) {
+        this.textContent = event.detail;
+    });
+
+    // Добавляем событие к кнопке
+    document.getElementById('updateButton').addEventListener('click', function() {
+        document.getElementById('textContainer').dispatchEvent(updateTextEvent);
+    });
+</script>
+</body>
+</html>

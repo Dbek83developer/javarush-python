@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Подсчет параграфов</title>
+</head>
+<body>
+    <div class="container">
+        <p>Параграф 1</p>
+        <p>Параграф 2</p>
+        <p>Параграф 3</p>
+    </div>
+    <script>
+        const container = document.querySelector('.container');
+        const paragraphs = container.querySelectorAll('p');
+        console.log(paragraphs.length);
+    </script>
+</body>
+</html>
