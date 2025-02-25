@@ -9,4 +9,5 @@ class MathHelper {
 }
 
 // Примеры вызова методов
-//TODO:
+m = new MathHelper();
+m.subtract(2, 5)
