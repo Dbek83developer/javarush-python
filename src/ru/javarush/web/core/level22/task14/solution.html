@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Global Error Handling</title>
+</head>
+<body>
+    <script>
+        // Установка глобального обработчика ошибок для window.onerror
+        window.onerror = function(message, source, lineno, colno, error) {
+            console.error(`Ошибка: ${message} в ${source}:${lineno}:${colno}`, error);
+        };
+
+        // Установка глобального обработчика ошибок для window.onunhandledrejection
+        window.onunhandledrejection = function(event) {
+            console.error('Необработанный отказ в промисе:', event.reason);
+        };
+
+        // Асинхронная функция, которая генерирует ошибку через 1 секунду
+        async function generateError() {
+            await new Promise((resolve) => setTimeout(resolve, 1000));
+            throw new Error('Ошибка из асинхронной функции');
+        }
+
+        // Создание отклоненного промиса
+        const rejectedPromise = Promise.reject(new Error('Ошибка из промиса'));
+
+        // Вызов асинхронной функции для генерации ошибки
+        generateError();
+    </script>
+</body>
+</html>
